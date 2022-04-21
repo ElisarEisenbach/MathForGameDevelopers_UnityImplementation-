@@ -8,6 +8,7 @@ using UnityEngine;
 class InterpolateKeyboardMovement : MonoBehaviour
 {
     public Vector3 Gravity;
+    public Vector3 Velocity;
 
     Interoplate interpolator;
     Vector3 GoalVel;
@@ -57,10 +58,10 @@ class InterpolateKeyboardMovement : MonoBehaviour
         var z = interpolator.Approach(GoalVel.y, currentVel.y, Time.deltaTime * 20f);
         currentVel = new Vector2(x, z);
 
-        var vel = MoveToLookVector.MoveToLookDir(x, z);
-       // vel = new Vector3(x,0,z); //before adding the cross product
+        //var vel = MoveToLookVector.MoveToLookDir(x, z);
+        Velocity = new Vector3(z,x,0); //before adding the cross product
 
-        transform.position = transform.position + vel * Time.deltaTime;
+        transform.position = transform.position + Velocity * Time.deltaTime;
 
 
 
