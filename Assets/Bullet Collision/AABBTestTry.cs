@@ -34,18 +34,22 @@ public class AABBTestTry : MonoBehaviour
 
             var enemyBounds = searchedObject.GetComponent<SpriteRenderer>().bounds;
 
-            var fractionLow = (enemyBounds.min.y - startPoint.y) / (endPoint.y - startPoint.y); //length of not touching / all length
-            var fractionHigh = (enemyBounds.max.y - startPoint.y) / (endPoint.y - startPoint.y);
+            float fractionLow = 0;
+            float fractionHigh = 0;
 
 
-            if (fractionHigh < fractionLow)
-            {
-                var fractionHighCash = fractionHigh;
-                fractionHigh = fractionLow;
-                fractionLow = fractionHighCash;
-            }
+            bool intersectionCheck = false;
 
-            intersection = startPoint + path * fractionLow;
+            intersectionCheck = CheckIntersection(path, enemyBounds, ref fractionLow, ref fractionHigh, 0);
+            if (!intersectionCheck)
+                intersectionCheck = CheckIntersection(path, enemyBounds, ref fractionLow, ref fractionHigh, 1);
+
+            if (!intersectionCheck)
+                return;
+            
+
+
+
 
             //      intersection = startPoint + path * LineFraction;
             // if (!float.IsNaN(intersection.x) && float.IsNaN(intersection.y) && float.IsNaN(intersection.z))
@@ -54,9 +58,43 @@ public class AABBTestTry : MonoBehaviour
             Debug.Log(intersection);
             //   }
 
-
-
         }
+    }
+
+
+    private bool CheckIntersection(Vector3 path, Bounds enemyBounds, ref float fractionLow, ref float fractionHigh, int tryNumber)
+    {
+        switch (tryNumber)
+        {
+            case 0:
+                fractionLow = (enemyBounds.min.y - startPoint.y) / (endPoint.y - startPoint.y); //length of not touching / all length
+                fractionHigh = (enemyBounds.max.y - startPoint.y) / (endPoint.y - startPoint.y);
+                break;
+
+            case 1:
+                fractionLow = (enemyBounds.min.x - startPoint.x) / (endPoint.x - startPoint.x); //length of not touching / all length
+                fractionHigh = (enemyBounds.max.x - startPoint.x) / (endPoint.x - startPoint.x);
+                break;
+
+            default:
+                break;
+        }
+
+
+        if (fractionHigh < fractionLow) // shot is from up
+        {
+            var fractionHighCash = fractionHigh;
+            fractionHigh = fractionLow;
+            fractionLow = fractionHighCash;
+        }
+
+
+        intersection = startPoint + path * fractionLow;
+
+        if (enemyBounds.min.x > intersection.x || enemyBounds.max.x < intersection.x
+            || enemyBounds.min.y > intersection.y || enemyBounds.max.y < intersection.y)
+            return false;
+        return true;
     }
 
     private void OnDrawGizmos()
