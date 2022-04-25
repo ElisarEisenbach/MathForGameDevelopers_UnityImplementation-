@@ -67,6 +67,7 @@
     <Compile Include="Assets\Bullet Collision\AABBTest.cs" />
     <Compile Include="Assets\Bullet Collision\AABBTestTry.cs" />
     <Compile Include="Assets\CrossProdect\MoveToLookVector.cs" />
+    <Compile Include="Assets\Explosions\Remap.cs" />
     <Compile Include="Assets\Jump and Gravity\Move.cs" />
     <Compile Include="Assets\Mouse Control\EulerAngle.cs" />
     <Compile Include="Assets\Mouse Control\MouseMovement.cs" />

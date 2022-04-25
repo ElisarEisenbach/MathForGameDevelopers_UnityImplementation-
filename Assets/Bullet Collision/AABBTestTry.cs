@@ -23,7 +23,7 @@ public class AABBTestTry : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Vector3 characterDir = KeyboardMovement.Velocity.normalized;
             startPoint = transform.position;
@@ -44,12 +44,8 @@ public class AABBTestTry : MonoBehaviour
             if (!intersectionCheck)
                 intersectionCheck = CheckIntersection(path, enemyBounds, ref fractionLow, ref fractionHigh, 1);
 
-            if (!intersectionCheck)
-                return;
-
-
-
-
+            if (intersectionCheck)
+            {
 
             //      intersection = startPoint + path * LineFraction;
             // if (!float.IsNaN(intersection.x) && float.IsNaN(intersection.y) && float.IsNaN(intersection.z))
@@ -61,6 +57,7 @@ public class AABBTestTry : MonoBehaviour
             remap.endSize = 5f;
             remap.IntersectionTime = Time.time;
             //Debug.Log(intersection);
+            }
            
 
             //   }
@@ -98,8 +95,13 @@ public class AABBTestTry : MonoBehaviour
 
         intersection = startPoint + path * fractionLow;
 
-        if (enemyBounds.min.x > intersection.x || enemyBounds.max.x < intersection.x
-            || enemyBounds.min.y > intersection.y || enemyBounds.max.y < intersection.y)
+
+        if (float.IsNaN(intersection.x) || float.IsNaN(intersection.y) || float.IsNaN(intersection.z) || float.IsInfinity(intersection.x)
+            || float.IsInfinity(intersection.y) || float.IsInfinity(intersection.z))
+            return false;
+
+        if (enemyBounds.min.x > endPoint.x || enemyBounds.max.x < endPoint.x
+            || enemyBounds.min.y > endPoint.y || enemyBounds.max.y < endPoint.y)
             return false;
         return true;
     }
