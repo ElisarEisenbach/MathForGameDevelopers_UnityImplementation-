@@ -46,7 +46,7 @@ public class AABBTestTry : MonoBehaviour
 
             if (!intersectionCheck)
                 return;
-            
+
 
 
 
@@ -54,8 +54,15 @@ public class AABBTestTry : MonoBehaviour
             //      intersection = startPoint + path * LineFraction;
             // if (!float.IsNaN(intersection.x) && float.IsNaN(intersection.y) && float.IsNaN(intersection.z))
             // {
-            GameObject.CreatePrimitive(PrimitiveType.Capsule).transform.position = intersection;
-            Debug.Log(intersection);
+            var shoot = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+            shoot.transform.position = intersection;
+            var remap = shoot.AddComponent<Remap>();
+            remap.duration = .3f;
+            remap.endSize = 5f;
+            remap.IntersectionTime = Time.time;
+            //Debug.Log(intersection);
+           
+
             //   }
 
         }
