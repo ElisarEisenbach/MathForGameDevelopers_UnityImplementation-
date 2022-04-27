@@ -77,6 +77,9 @@
     <Compile Include="Assets\6 Explosions\Remap.cs" />
     <Compile Include="Assets\7 Bullet Whizzes\MoveCube.cs" />
     <Compile Include="Assets\7 Bullet Whizzes\Projection.cs" />
+    <Compile Include="Assets\8 Billboarding\CreateMesh.cs" />
+    <Compile Include="Assets\8 Billboarding\billboarding.cs" />
+    <None Include="Assets\8 Billboarding\NewUnlitShader.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
