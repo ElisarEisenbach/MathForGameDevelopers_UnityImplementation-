@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class InterpolateKeyboardMovement : MonoBehaviour
+class InterpolateKeyboardMovementCross : MonoBehaviour
 {
     public Vector3 Gravity;
     public Vector3 Velocity;
@@ -58,13 +58,9 @@ class InterpolateKeyboardMovement : MonoBehaviour
         var z = interpolator.Approach(GoalVel.y, currentVel.y, Time.deltaTime * 20f);
         currentVel = new Vector2(x, z);
 
-        //var vel = MoveToLookVector.MoveToLookDir(x, z);
-        Velocity = new Vector3(z,x,0); //before adding the cross product
+        Velocity = MoveToLookVector.MoveToLookDir(x, z); //apply cross product to movement
 
         transform.position = transform.position + Velocity * Time.deltaTime;
-
-
-
 
     }
 

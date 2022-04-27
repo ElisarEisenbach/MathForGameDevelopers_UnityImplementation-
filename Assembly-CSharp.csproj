@@ -64,17 +64,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\1 jump and Gravity\Move.cs" />
+    <Compile Include="Assets\2 Smooth Movement\Interoplate.cs" />
+    <Compile Include="Assets\2 Smooth Movement\InterpolateKeyboardMovement2D.cs" />
+    <Compile Include="Assets\3 Mouse Control\EulerAngle.cs" />
+    <Compile Include="Assets\3 Mouse Control\InterpolateKeyboardMovement.cs" />
+    <Compile Include="Assets\3 Mouse Control\MouseMovement.cs" />
+    <Compile Include="Assets\4 Cross Prodect\InterpolateKeyboardMovementCross.cs" />
+    <Compile Include="Assets\4 Cross Prodect\MoveToLookVector.cs" />
     <Compile Include="Assets\Bullet Collision\AABBTest.cs" />
     <Compile Include="Assets\Bullet Collision\AABBTestTry.cs" />
     <Compile Include="Assets\Bullet Whizzes\MoveCube.cs" />
     <Compile Include="Assets\Bullet Whizzes\Projection.cs" />
-    <Compile Include="Assets\CrossProdect\MoveToLookVector.cs" />
     <Compile Include="Assets\Explosions\Remap.cs" />
-    <Compile Include="Assets\Jump and Gravity\Move.cs" />
-    <Compile Include="Assets\Mouse Control\EulerAngle.cs" />
-    <Compile Include="Assets\Mouse Control\MouseMovement.cs" />
-    <Compile Include="Assets\Smooth Movement\Interoplate.cs" />
-    <Compile Include="Assets\Smooth Movement\InterpolateKeyboardMovement.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

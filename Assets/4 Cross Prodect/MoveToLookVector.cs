@@ -13,12 +13,6 @@ public class MoveToLookVector : MonoBehaviour
         eangle = GetComponent<EulerAngle>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-
-    }
 
     public static Vector3 MoveToLookDir(float x, float z)
     {
