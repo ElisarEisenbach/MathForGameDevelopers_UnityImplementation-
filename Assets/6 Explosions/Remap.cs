@@ -12,9 +12,10 @@ public class Remap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        IntersectionTime = Time.time;
         //   creationTime = Time.time;
         startScale = transform.localScale.x;
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 20);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
     }
 
     // Update is called once per frame

@@ -72,11 +72,11 @@
     <Compile Include="Assets\3 Mouse Control\MouseMovement.cs" />
     <Compile Include="Assets\4 Cross Prodect\InterpolateKeyboardMovementCross.cs" />
     <Compile Include="Assets\4 Cross Prodect\MoveToLookVector.cs" />
-    <Compile Include="Assets\Bullet Collision\AABBTest.cs" />
-    <Compile Include="Assets\Bullet Collision\AABBTestTry.cs" />
-    <Compile Include="Assets\Bullet Whizzes\MoveCube.cs" />
-    <Compile Include="Assets\Bullet Whizzes\Projection.cs" />
-    <Compile Include="Assets\Explosions\Remap.cs" />
+    <Compile Include="Assets\5 Bullet Collision\AABBTest.cs" />
+    <Compile Include="Assets\5 Bullet Collision\AABBTestTry.cs" />
+    <Compile Include="Assets\6 Explosions\Remap.cs" />
+    <Compile Include="Assets\7 Bullet Whizzes\MoveCube.cs" />
+    <Compile Include="Assets\7 Bullet Whizzes\Projection.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

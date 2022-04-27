@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class AABBTestTry : MonoBehaviour
 {
-    private InterpolateKeyboardMovement KeyboardMovement;
+
+    [SerializeField] GameObject BulletPrefab;
+
+
+    private InterpolateKeyboardMovement2D KeyboardMovement;
     private GameObject searchedObject;
 
 
@@ -15,7 +19,7 @@ public class AABBTestTry : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        KeyboardMovement = GetComponent<InterpolateKeyboardMovement>();
+        KeyboardMovement = GetComponent<InterpolateKeyboardMovement2D>();
         searchedObject = GameObject.FindGameObjectWithTag("Enemy");
     }
 
@@ -47,20 +51,20 @@ public class AABBTestTry : MonoBehaviour
             if (intersectionCheck)
             {
 
-            //      intersection = startPoint + path * LineFraction;
-            // if (!float.IsNaN(intersection.x) && float.IsNaN(intersection.y) && float.IsNaN(intersection.z))
-            // {
-            var shoot = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-            shoot.transform.position = intersection;
-            var remap = shoot.AddComponent<Remap>();
-            remap.duration = .3f;
-            remap.endSize = 5f;
-            remap.IntersectionTime = Time.time;
-            //Debug.Log(intersection);
-            }
-           
+                //      intersection = startPoint + path * LineFraction;
+                // if (!float.IsNaN(intersection.x) && float.IsNaN(intersection.y) && float.IsNaN(intersection.z))
+                // {
+                //var shoot = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+                var shoot = Instantiate<GameObject>(BulletPrefab);
+                shoot.transform.position = intersection;
+                //  var remap = shoot.AddComponent<Remap>();
+                //  remap.duration = .3f;
+                //  remap.endSize = 5f;
+                //  remap.IntersectionTime = Time.time;
 
-            //   }
+            }
+
+
 
         }
     }
