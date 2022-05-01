@@ -18,8 +18,10 @@ public class RotateMatrix : MonoBehaviour
     {
         var matrix = Matrix4x4.identity;
         Vector3 f = Vector3;
-        Vector3 u = Vector3.up;
-        Vector3 r = Vector3.Cross(u, f);
+        f.y = 0;
+        f = f.normalized;
+        Vector3 u = Vector3.up; 
+        Vector3 r = Vector3.Cross(u, f).normalized;
         matrix[0,0] = f.x;
         matrix[0,1] = u.x;
         matrix[0,2] = r.x;
