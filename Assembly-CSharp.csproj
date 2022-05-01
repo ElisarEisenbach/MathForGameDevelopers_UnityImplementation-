@@ -79,6 +79,11 @@
     <Compile Include="Assets\7 Bullet Whizzes\Projection.cs" />
     <Compile Include="Assets\8 Billboarding\CreateMesh.cs" />
     <Compile Include="Assets\8 Billboarding\billboarding.cs" />
+    <Compile Include="Assets\9 Rotate Matrices\RotateEnemy.cs" />
+    <Compile Include="Assets\9 Rotate Matrices\RotateMatrix.cs" />
+    <Compile Include="Assets\9 Rotate Matrices\ScaleBoss.cs" />
+    <None Include="Assets\9 Rotate Matrices\NewUnlitShader.shader" />
+    <None Include="Assets\9 Rotate Matrices\NewUnlitShader 1.shader" />
     <None Include="Assets\8 Billboarding\NewUnlitShader.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/2019.4.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

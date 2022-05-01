@@ -60,8 +60,8 @@ class InterpolateKeyboardMovementCross : MonoBehaviour
 
         Velocity = MoveToLookVector.MoveToLookDir(x, z); //apply cross product to movement
 
-        transform.position = transform.position + Velocity * Time.deltaTime;
-
+        transform.position =(transform.position + Velocity * Time.deltaTime);
+        Debug.Log(transform.position);
     }
 
     private void KeyRelese(KeyCode keyCode)
